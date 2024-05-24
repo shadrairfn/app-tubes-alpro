@@ -3,66 +3,33 @@ package menu_tubes
 import "fmt"
 
 func MenuAdminUser() {
-	fmt.Println("=====================================")
-	fmt.Println("============Login Sebagai============")
+	fmt.Println("==========Login Sebagai===========")
 	fmt.Println("||	1. Admin 		||")
-	fmt.Println("||	2. Calon Mahasiswa	||")
+	fmt.Println("||	2. Mahasiswa		||")
 	fmt.Println("||	3. Exit			||")
-	fmt.Println("=====================================")
-}
-
-func MenuSortingAdmin() {
-	fmt.Println("=====================================")
-	fmt.Println("			Sorting berdasarkan")
-	fmt.Println("			1. Nilai Tes")
-	fmt.Println("			2. Jurusan")
-	fmt.Println("=====================================")
-}
-
-func SortingNilaiTes() {
-	fmt.Println("=====================================")
-	fmt.Println("	1. Nilai Terendah - Tetinggi")
-	fmt.Println("	2. Nilai Tertinggi - Terendah")
-	fmt.Println("=====================================")
-}
+	fmt.Println("==================================")
+} // Ditampilkan saat pertama kali program dijalankan
 
 func MenuAdmin() {
-	fmt.Println("=================================================")
-	fmt.Println("||		1. Cek Daftar Mahasiswa					||")
-	fmt.Println("||		2. Konfirmasi Kelulusan Mahasiswa		||")
-	fmt.Println("=================================================")
-}
+	fmt.Println("==================================================")
+	fmt.Println("||	1. Cek Daftar Mahasiswa			||")
+	fmt.Println("||	2. Konfirmasi Kelulusan Mahasiswa	||")
+	fmt.Println("||	3. Edit Daftar Mahasiswa		||")
+	fmt.Println("==================================================")
+} // Ditampilkan saat pengguna login sebagai admin
 
-func SortingJurusan() {
-	fmt.Println("=================================================")
-	fmt.Println("|| 1. S1 Informatika		||")
-	fmt.Println("|| 2. S1 Sistem Informasi	||")
-	fmt.Println("|| 3. D4 Informatika		||")
-	fmt.Println("|| 4. D4 Sistem Informasi 	||")
-	fmt.Println("|| 5. D3 Informatika		||")
-	fmt.Println("|| 6. D3 Sistem Informasi	||")
-	fmt.Println("=================================================")
-}
-
-func MenuUser() {
-	fmt.Println("=====================================")
-	fmt.Println("||1. Daftar			||")
-	fmt.Println("||2. Edit			||")
-	fmt.Println("||3. Lihat Status		||")
-	fmt.Println("=====================================")
-}
-
-func Menu2() {
-	fmt.Println("=====B). Data Registrasi=================================")
-	fmt.Printf("||     1. Daftar Seleksi				||\n")
-	fmt.Printf("||     2. Riwayat Registrasi				||\n")
-	fmt.Printf("||     3. Exit						||\n")
-	fmt.Printf("==========================================================\n")
-	fmt.Print("Pilih menu: ")
-}
+func MenuSortingAdmin() {
+	fmt.Println("=============Sorting berdasarkan==========")
+	fmt.Println("||	1. Nilai Tes Rendah - Tinggi	||")
+	fmt.Println("||	2. Nilai Tes Tinggi - Rendah	||")
+	fmt.Println("||	3. Jurusan			||")
+	fmt.Println("||	4. Mahasiswa Diterima		||")
+	fmt.Println("||	5. Mahasiswa Ditolak		||")
+	fmt.Println("==========================================")
+} // Ditampilkan saat pengguna memilih menu Cek Pendaftar di halaman admin
 
 func MenuJurusan() {
-	fmt.Println("==================================")
+	fmt.Println("======= Pilih Program Studi=======")
 	fmt.Println("|| 1. S1 Informatika		||")
 	fmt.Println("|| 2. S1 Sistem Informasi	||")
 	fmt.Println("|| 3. D4 Informatika		||")
@@ -70,4 +37,23 @@ func MenuJurusan() {
 	fmt.Println("|| 5. D3 Informatika		||")
 	fmt.Println("|| 6. D3 Sistem Informasi	||")
 	fmt.Println("==================================")
-}
+	fmt.Println()
+} // Ditampilkan setelah mahasiswa mengisi informasi data diri
+
+func MenuUser() {
+	fmt.Println("==================================")
+	fmt.Println("||1. Daftar			||")
+	fmt.Println("||2. Lihat Status		||")
+	fmt.Println("==================================")
+} // Ditampilkan di halaman Mahasiswa setelah mengisi data diri
+
+func SortingJurusan() {
+	fmt.Println("======= Pilih Berdasarkan ========")
+	fmt.Println("|| 1. S1 Informatika		||")
+	fmt.Println("|| 2. S1 Sistem Informasi	||")
+	fmt.Println("|| 3. D4 Informatika		||")
+	fmt.Println("|| 4. D4 Sistem Informasi 	||")
+	fmt.Println("|| 5. D3 Informatika		||")
+	fmt.Println("|| 6. D3 Sistem Informasi	||")
+	fmt.Println("==================================")
+} // Ditampilkan di halaman admin Cek Pendaftar
