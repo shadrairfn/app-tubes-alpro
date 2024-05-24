@@ -1,4 +1,4 @@
-package adminTubes
+package admin_tubes
 
 import (
 	"fmt"
