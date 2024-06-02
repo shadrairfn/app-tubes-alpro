@@ -31,9 +31,8 @@ func NilaiAscending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyak
 	fmt.Println()
 	for k := 0; k < banyakMahasiswa; k++ {
 		fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
-		fmt.Println()
+		fmt.Println("==========================")
 	}
-	fmt.Println("==========================")
 }
 
 func NilaiDescending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakMahasiswa int) {
@@ -57,9 +56,8 @@ func NilaiDescending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banya
 	fmt.Println()
 	for k := 0; k < banyakMahasiswa; k++ {
 		fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
-		fmt.Println()
+		fmt.Println("==========================")
 	}
-	fmt.Println("==========================")
 }
 
 func SortingJurusan(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMahasiswa int) {
@@ -73,55 +71,55 @@ func SortingJurusan(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMa
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "S1" && arr2[k].Jurusan == "Informatika" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	case 2:
 		fmt.Println("=========================")
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "S1" && arr2[k].Jurusan == "Sistem Informasi" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	case 3:
 		fmt.Println("=========================")
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "D4" && arr2[k].Jurusan == "Informatika" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	case 4:
 		fmt.Println("=========================")
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "D4" && arr2[k].Jurusan == "Sistem Informasi" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	case 5:
 		fmt.Println("=========================")
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "D3" && arr2[k].Jurusan == "Informatika" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	case 6:
 		fmt.Println("=========================")
 		for k := 0; k < banyakMahasiswa; k++ {
 			if arr2[k].Program == "D3" && arr2[k].Jurusan == "Sistem Informasi" {
 				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
+				fmt.Println("=========================")
 			}
 		}
-		fmt.Println("=========================")
+		
 	}
 }
 
@@ -130,10 +128,9 @@ func SortingLulus(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMaha
 	for k := 0; k < banyakMahasiswa; k++ {
 		if arr3[k].Konfirmasi == true {
 			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-			fmt.Println()
+			fmt.Println("==========================")
 		}
 	}
-	fmt.Println("=========================")
 }
 
 func SortingDitolak(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMahasiswa int) {
@@ -141,10 +138,9 @@ func SortingDitolak(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMa
 	for k := 0; k < banyakMahasiswa; k++ {
 		if arr3[k].Konfirmasi == false {
 			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Tidak Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-			fmt.Println()
+			fmt.Println("==========================")
 		}
 	}
-	fmt.Println("=========================")
 }
 
 func SortingUmur(arr struct_tubes.TabArr, banyakMahasiswa int) {

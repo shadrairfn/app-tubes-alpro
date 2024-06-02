@@ -126,9 +126,9 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 		fmt.Print("Masukan nilai anda: ")
 		fmt.Scan(&arr2[i].NilaiTes)
 		fmt.Println()
-		fmt.Print(" Status Kelulusana (ya/tidak): ")
+		fmt.Print("Status Kelulusan (Ya/Tidak): ")
 		fmt.Scan(&kelulusan)
-		if kelulusan == "ya" {
+		if kelulusan == "Ya" {
 			arr3[i].Konfirmasi = true
 		} else {
 			arr3[i].Konfirmasi = false
@@ -187,9 +187,9 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 
 					fmt.Print("Masukan nilai anda: ")
 					fmt.Scan(&nilaiTesEdit)
-					fmt.Print(" Status Kelulusana (ya/tidak): ")
+					fmt.Print("Status Kelulusan (Ya/Tidak): ")
 					fmt.Scan(&kelulusan)
-						if kelulusan == "ya" {
+						if kelulusan == "Ya" {
 							arr3[i].Konfirmasi = true
 						} else {
 							arr3[i].Konfirmasi = false
@@ -207,7 +207,7 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 			}	
 		}
 		case "hapus":
-		fmt.Print("Ketikan nama dan nomor induk yang akan dihapus: ")
+		fmt.Print("Ketikan Nama dan Nomor Induk yang akan dihapus: ")
 		fmt.Scan(&namaHapus, &noIndukHapus)
 		hasilFind := FindDelete(*arr, *banyakMahasiswa, namaHapus, noIndukHapus) // Memanggil fungsi find delete untuk mencari index data yang akan dihapus //
 		
