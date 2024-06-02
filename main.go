@@ -16,6 +16,7 @@ func main() {
 	var chooseMenu, chooseMenuAdmin, chooseMenuUser int
 
 	banyakMahasiswa = 0
+	
 	for {
 		menu_tubes.MenuAdminUser()
 		fmt.Print("Pilih Menu: ")
@@ -55,7 +56,14 @@ func main() {
 				fmt.Print("Masukan Nama Anda: ")
 				fmt.Scan(&CariNama)
 				fmt.Println()
-				user_tubes.LihatStatusKelulusan(arr, banyakMahasiswa, arr3, CariNama)
+				user_tubes.CekStatusMahasiswa(arr, banyakMahasiswa, CariNama)
+				fmt.Println()
+			case 3:
+				var CariNama string
+				fmt.Print("Masukan Nama Anda: ")
+				fmt.Scan(&CariNama)
+				fmt.Println()
+				user_tubes.LihatStatusKelulusan(arr, arr2, banyakMahasiswa, arr3, CariNama)
 				fmt.Println()
 			}
 		}

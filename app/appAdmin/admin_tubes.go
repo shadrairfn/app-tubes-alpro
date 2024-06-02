@@ -10,7 +10,6 @@ import (
 
 func CekPendaftar(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMahasiswa int, arr3 struct_tubes.TabKonf) {
 	var sorting int
-	var sortingJurusan int
 	for i := 0; i < banyakMahasiswa; i++ {
 		fmt.Println("==================================================")
 		fmt.Printf(" Mahasiswa ke %d: 				\n", i+1)
@@ -32,102 +31,16 @@ func CekPendaftar(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMaha
 	switch sorting {
 	case 1:	
 		sorting_tubes.NilaiAscending(&arr, &arr2, banyakMahasiswa)
-		
-		fmt.Println("==========================")
-		for k := 0; k < banyakMahasiswa; k++ {
-			fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
-			fmt.Println()
-		}
-		fmt.Println("==========================")
-
 	case 2:
 		sorting_tubes.NilaiDescending(&arr, &arr2, banyakMahasiswa)
-
-		fmt.Println("==========================")
-		for k := 0; k < banyakMahasiswa; k++ {
-			fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
-			fmt.Println()
-		}
-		fmt.Println("==========================")
-
 	case 3:
-		menu_tubes.SortingJurusan()
-		fmt.Print("Pilih Menu Program dan Jurusan: ")
-		fmt.Scan(&sortingJurusan)
-		switch sortingJurusan {
-		case 1:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "S1" && arr2[k].Jurusan == "Informatika" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		case 2:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "S1" && arr2[k].Jurusan == "Sistem Informasi" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		case 3:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "D4" && arr2[k].Jurusan == "Informatika" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		case 4:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "D4" && arr2[k].Jurusan == "Sistem Informasi" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		case 5:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "D3" && arr2[k].Jurusan == "Informatika" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		case 6:
-			fmt.Println("=========================")
-			for k := 0; k < banyakMahasiswa; k++ {
-				if arr2[k].Program == "D3" && arr2[k].Jurusan == "Sistem Informasi" {
-					fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-					fmt.Println()
-				}
-			}
-			fmt.Println("=========================")
-		}
+		sorting_tubes.SortingJurusan(arr, arr2, banyakMahasiswa)
 	case 4:
-		fmt.Println("=========================")
-		for k := 0; k < banyakMahasiswa; k++ {
-			if arr3[k].Konfirmasi == true {
-				fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
-			}
-		}
-		fmt.Println("=========================")
+		sorting_tubes.SortingLulus(arr, arr3, banyakMahasiswa)
 	case 5:
-		fmt.Println("=========================")
-		for k := 0; k < banyakMahasiswa; k++ {
-			if arr3[k].Konfirmasi == false {
-				fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Tidak Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
-				fmt.Println()
-			}
-		}
-		fmt.Println("=========================")
+		sorting_tubes.SortingDitolak(arr, arr3, banyakMahasiswa)
+	case 6:
+		sorting_tubes.SortingUmur(arr, banyakMahasiswa)
 	}
 }
 
@@ -137,10 +50,6 @@ func BeriKonfirmasi(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMa
 		fmt.Printf(" Mahasiswa ke %d: 				\n", i+1)
 		fmt.Printf(" Nama		: %s		\n", arr[i].NamaMahasiswa)
 		fmt.Printf(" Nomor Induk	: %s 			\n", arr[i].NomorInduk)
-		fmt.Printf(" Tanggal Lahir	: %d-%d-%d 			\n", arr[i].TanggalLahir, arr[i].BulanLahir, arr[i].TahunLahir)
-		fmt.Printf(" Umur		: %d 				\n", arr[i].UmurMahasiswa)
-		fmt.Printf(" Asal Kota	: %s 			\n", arr[i].KotaTinggal)
-		fmt.Printf(" Alamat		: %s 		\n", arr[i].NamaJalan)
 		fmt.Printf(" Program Studi	: %s %s\n", arr2[i].Program, arr2[i].Jurusan)
 		fmt.Printf(" Nilai Tes 	: %0.1f\n", arr2[i].NilaiTes)
 		fmt.Println()
@@ -158,12 +67,13 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 	/* Mengedit mahasiswa yang sudah terdaftar dengan memasukan Nama, NIK, Tanggal lahir, Umur, Asal kota, Alamat yang baru */
 	var menuEdit string
 	var edit, nomorIndukEdit, kotaTinggalEdit string
-	var namaJalan1Edit, namajalan2Edit string
+	var namaJalanEdit string
 	var tanggalLahirEdit, bulanLahirEdit, tahunLahirEdit, umurMahasiswaEdit int
 	var noIndukHapus string
 	var kelulusan string
 	var programStud int
 	var nilaiTesEdit float64
+	var namaHapus string
 
 	fmt.Print("Menu: (tambah / edit / hapus): ")
 	fmt.Scan(&menuEdit)
@@ -186,7 +96,7 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 		fmt.Printf("Asal Kota (Ex : Bandung)     : ")
 		fmt.Scan(&arr[i].KotaTinggal)
 
-		fmt.Printf("Alamat Rumah 		   : ")
+		fmt.Printf("Alamat Rumah 		     : ")
 		fmt.Scan(&arr[i].NamaJalan)
 
 		menu_tubes.MenuJurusan()
@@ -230,26 +140,26 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 	case "edit":
 		fmt.Print("Nama mahasiswa yang akan diganti:  ")
 		fmt.Scan(&edit)
-		fmt.Printf("Masukan data baru\banyakMahasiswa")
+		fmt.Printf("Masukan data baru\n")
 		for i := 0; i < *banyakMahasiswa; i++ {
 			if arr[i].NamaMahasiswa == edit {
-				fmt.Printf("Nama			     : ")
+				fmt.Printf("Nama			: ")
 				fmt.Scan(&edit)
 
-				fmt.Printf("Nomor Induk Kependudukan     : ")
+				fmt.Printf("Nomor Induk Kependudukan: ")
 				fmt.Scan(&nomorIndukEdit)
 
-				fmt.Print("Tanggal Lahir: ")
+				fmt.Print("Tanggal Lahir		: ")
 				fmt.Scan(&tanggalLahirEdit, &bulanLahirEdit, &tahunLahirEdit)
 
-				fmt.Print("Umur			     : ")
+				fmt.Print("Umur			: ")
 				fmt.Scan(&umurMahasiswaEdit)
 
-				fmt.Printf("Asal Kota (Ex : Bandung)     : ")
+				fmt.Printf("Asal Kota      		: ")
 				fmt.Scan(&kotaTinggalEdit)
 
-				fmt.Printf("Alamat Rumah (2 suku kata)   : ")
-				fmt.Scan(&namaJalan1Edit, &namajalan2Edit)
+				fmt.Printf("Alamat Rumah   		: ")
+				fmt.Scan(&namaJalanEdit)
 
 				menu_tubes.MenuJurusan()
 				fmt.Print("Pilih Jurusan: ")
@@ -291,15 +201,15 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 					arr[i].TanggalLahir = tahunLahirEdit
 					arr[i].BulanLahir = bulanLahirEdit
 					arr[i].TahunLahir = tahunLahirEdit
-					arr[i].NamaJalan = namaJalan1Edit
+					arr[i].NamaJalan = namaJalanEdit
 					arr[i].UmurMahasiswa = umurMahasiswaEdit
 					arr2[i].NilaiTes = nilaiTesEdit
 			}	
 		}
 		case "hapus":
-		fmt.Print("Ketikan nomor induk yang akan dihapus: ")
-		fmt.Scan(&noIndukHapus)
-		hasilFind := FindDelete(*arr, *banyakMahasiswa, noIndukHapus) // Memanggil fungsi find delete untuk mencari index data yang akan dihapus //
+		fmt.Print("Ketikan nama dan nomor induk yang akan dihapus: ")
+		fmt.Scan(&namaHapus, &noIndukHapus)
+		hasilFind := FindDelete(*arr, *banyakMahasiswa, namaHapus, noIndukHapus) // Memanggil fungsi find delete untuk mencari index data yang akan dihapus //
 		
 		if hasilFind != -1 {
 			for i := hasilFind; i < *banyakMahasiswa; i++ {
@@ -329,12 +239,12 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 	}	
 }
 
-func FindDelete(arr struct_tubes.TabArr, banyakMahasiswa int, x string) int {
+func FindDelete(arr struct_tubes.TabArr, banyakMahasiswa int, x, y string) int {
 	// { Fungsi mengembalikan index data yang akan dihapus } //
 	idx := -1
 	i := 0
 	for i < banyakMahasiswa && idx == -1 {
-		if arr[i].NomorInduk == x {
+		if arr[i].NomorInduk == y && arr[i].NamaMahasiswa == x {
 			idx = i
 		}
 		i += 1

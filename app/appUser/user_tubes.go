@@ -60,17 +60,36 @@ func IsInput(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakMahasis
 	*banyakMahasiswa = i
 }
 
-func LihatStatusKelulusan(arr struct_tubes.TabArr, banyakMahasiswa int, arr3 struct_tubes.TabKonf, CariNama string) {
+func LihatStatusKelulusan(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMahasiswa int, arr3 struct_tubes.TabKonf, CariNama string) {
+	ada := false
+	idx := -1
 	for i := 0; i < banyakMahasiswa; i++ {
 		if CariNama == arr[i].NamaMahasiswa {
-		fmt.Printf(" Nama		: %s		\n", arr[i].NamaMahasiswa)
-		fmt.Printf(" Nomor Induk	: %s 			\n", arr[i].NomorInduk)
-		fmt.Printf(" Tanggal Lahir	: %d-%d-%d 			\n", arr[i].TanggalLahir, arr[i].BulanLahir, arr[i].TahunLahir)
-		fmt.Printf(" Umur		: %d 				\n", arr[i].UmurMahasiswa)
-		fmt.Printf(" Asal Kota	: %s 			\n", arr[i].KotaTinggal)
-		fmt.Printf(" Alamat		: %s 		\n", arr[i].NamaJalan)
-		fmt.Println()
-		fmt.Printf(" Status Kelulusan: %t\n", arr3[i].Konfirmasi)
+			ada = true
+			idx = i
 		}
+	}
+	if ada == true {
+		fmt.Printf(" Nama		: %s		\n", arr[idx].NamaMahasiswa)
+		fmt.Printf(" Nomor Induk	: %s 			\n", arr[idx].NomorInduk)
+		fmt.Println()
+		fmt.Printf(" Status Kelulusan: %t\n", arr3[idx].Konfirmasi)
+	} else {
+		fmt.Println("||	Nama tidak ditemukan.	||")
+	}
+}
+
+func CekStatusMahasiswa(arr struct_tubes.TabArr, banyakMahasiswa int, CariNama string) {
+	// Binary Search //
+	idx := 0
+	for i := 0; i < banyakMahasiswa; i++ {
+		if arr[i].NamaMahasiswa == CariNama {
+			idx += 1
+		}
+	}
+	if idx != 0 {
+		fmt.Println("||	Nama Sudah Terdaftar	||")
+	} else {
+		fmt.Println("||	Nama Belum Terdaftar	||")
 	}
 }

@@ -1,6 +1,10 @@
 package sorting_tubes
 
-import struct_tubes "github.com/shadrairfn/app-tubes-alpro/app/appStruct"
+import (
+	"fmt"
+	struct_tubes "github.com/shadrairfn/app-tubes-alpro/app/appStruct"
+	menu_tubes "github.com/shadrairfn/app-tubes-alpro/app/appMenu"
+)
 
 func NilaiAscending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakMahasiswa int) {
 	for pass := 1; pass < banyakMahasiswa; pass++ {
@@ -17,11 +21,19 @@ func NilaiAscending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyak
 		(*arr2)[idx].NilaiTes = (*arr2)[pass - 1].NilaiTes
 		(*arr)[idx].NamaMahasiswa = (*arr)[pass - 1].NamaMahasiswa
 		(*arr)[idx].NomorInduk = (*arr)[pass - 1].NomorInduk
-		
+
 		(*arr2)[pass - 1].NilaiTes = temp
 		(*arr)[pass - 1].NamaMahasiswa = temp1
 		(*arr)[pass - 1].NomorInduk = temp2
 	}
+
+	fmt.Println("==========================")
+	fmt.Println()
+	for k := 0; k < banyakMahasiswa; k++ {
+		fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
+		fmt.Println()
+	}
+	fmt.Println("==========================")
 }
 
 func NilaiDescending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakMahasiswa int) {
@@ -39,5 +51,129 @@ func NilaiDescending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banya
 		(*arr2)[j+1].NilaiTes = temp
 		(*arr)[j+1].NamaMahasiswa = temp1
 		(*arr)[j+1].NomorInduk = temp2
+	}
+
+	fmt.Println("==========================")
+	fmt.Println()
+	for k := 0; k < banyakMahasiswa; k++ {
+		fmt.Printf("Nama	: %s\nNo.Induk: %s\nNilai	: %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
+		fmt.Println()
+	}
+	fmt.Println("==========================")
+}
+
+func SortingJurusan(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMahasiswa int) {
+	var sortingJurusan int
+	menu_tubes.SortingJurusan()
+	fmt.Print("Pilih Menu Program dan Jurusan: ")
+	fmt.Scan(&sortingJurusan)
+	switch sortingJurusan {
+	case 1:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "S1" && arr2[k].Jurusan == "Informatika" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	case 2:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "S1" && arr2[k].Jurusan == "Sistem Informasi" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: S1 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	case 3:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "D4" && arr2[k].Jurusan == "Informatika" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	case 4:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "D4" && arr2[k].Jurusan == "Sistem Informasi" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D4 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	case 5:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "D3" && arr2[k].Jurusan == "Informatika" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Informatika\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	case 6:
+		fmt.Println("=========================")
+		for k := 0; k < banyakMahasiswa; k++ {
+			if arr2[k].Program == "D3" && arr2[k].Jurusan == "Sistem Informasi" {
+				fmt.Printf("Nama		: %s\nNomor Induk	: %s\nProgram Studi	: D3 Sistem Informasi\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+				fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
+	}
+}
+
+func SortingLulus(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMahasiswa int) {
+	fmt.Println("=========================")
+	for k := 0; k < banyakMahasiswa; k++ {
+		if arr3[k].Konfirmasi == true {
+			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+			fmt.Println()
+		}
+	}
+	fmt.Println("=========================")
+}
+
+func SortingDitolak(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMahasiswa int) {
+	fmt.Println("=========================")
+	for k := 0; k < banyakMahasiswa; k++ {
+		if arr3[k].Konfirmasi == false {
+			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Tidak Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+			fmt.Println()
+		}
+	}
+	fmt.Println("=========================")
+}
+
+func SortingUmur(arr struct_tubes.TabArr, banyakMahasiswa int) {
+	var umur int
+	fmt.Print("Masukan Umur yang akan dicari: ")
+	fmt.Scan(&umur)
+	ki := 0
+	ka := banyakMahasiswa - 1
+	idx := -1
+	for ki <= ka && idx == -1 {
+		te := (ka + ki)/2
+		if arr[te].UmurMahasiswa < umur {
+			ka = te - 1
+		} else if arr[te].UmurMahasiswa > umur {
+			ki = te + 1
+		} else if arr[te].UmurMahasiswa == umur {
+			idx = te
+		}
+	}
+	if idx == -1 {
+		fmt.Printf("Tidak Terdapat Mahasiswa Dengan Umur %d\n", umur)
+	} else {
+		fmt.Println("=========================")
+		for i := 0; i < banyakMahasiswa; i++ {
+			if arr[i].UmurMahasiswa == umur {
+				fmt.Printf("Nama	: %s\nNo.Induk: %s\numur	: %d\n", arr[i].NamaMahasiswa, arr[i].NomorInduk, arr[i].UmurMahasiswa)
+			fmt.Println()
+			}
+		}
+		fmt.Println("=========================")
 	}
 }
