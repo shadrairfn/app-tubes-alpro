@@ -53,7 +53,7 @@ func BeriKonfirmasi(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMa
 		fmt.Printf(" Program Studi	: %s %s\n", arr2[i].Program, arr2[i].Jurusan)
 		fmt.Printf(" Nilai Tes 	: %0.1f\n", arr2[i].NilaiTes)
 		fmt.Println()
-		fmt.Print(" Status Kelulusana (Ya/Tidak): ")
+		fmt.Print(" Status Kelulusan (Ya/Tidak): ")
 		fmt.Scan(&kelulusan)
 		if kelulusan == "Ya" {
 			arr3[i].Konfirmasi = true
