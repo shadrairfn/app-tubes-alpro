@@ -70,10 +70,9 @@ func LihatStatusKelulusan(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, ba
 		}
 	}
 	if ada == true {
-		fmt.Printf(" Nama		: %s		\n", arr[idx].NamaMahasiswa)
-		fmt.Printf(" Nomor Induk	: %s 			\n", arr[idx].NomorInduk)
-		fmt.Println()
-		fmt.Printf(" Status Kelulusan: %t\n", arr3[idx].Konfirmasi)
+		fmt.Printf(" Nama		  : %s		\n", arr[idx].NamaMahasiswa)
+		fmt.Printf(" Nomor Induk	  : %s 			\n", arr[idx].NomorInduk)
+		fmt.Printf(" Status Kelulusan : %t\n", arr3[idx].Konfirmasi)
 	} else {
 		fmt.Println("||	Nama tidak ditemukan.	||")
 	}
