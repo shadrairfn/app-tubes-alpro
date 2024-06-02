@@ -128,6 +128,7 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 		fmt.Println()
 		fmt.Print("Status Kelulusan (Ya/Tidak): ")
 		fmt.Scan(&kelulusan)
+		fmt.Println()
 		if kelulusan == "Ya" {
 			arr3[i].Konfirmasi = true
 		} else {
@@ -188,6 +189,7 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 
 					fmt.Print("Masukan nilai anda: ")
 					fmt.Scan(&nilaiTesEdit)
+					fmt.Println()
 					fmt.Print("Status Kelulusan (Ya/Tidak): ")
 					fmt.Scan(&kelulusan)
 						if kelulusan == "Ya" {
@@ -195,7 +197,6 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 						} else {
 							arr3[i].Konfirmasi = false
 						}
-					fmt.Println()
 					arr[i].NamaMahasiswa = edit
 					arr[i].NomorInduk = nomorIndukEdit
 					arr[i].KotaTinggal = kotaTinggalEdit

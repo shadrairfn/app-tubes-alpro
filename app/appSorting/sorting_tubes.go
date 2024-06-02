@@ -28,7 +28,6 @@ func NilaiAscending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyak
 	}
 
 	fmt.Println("========================================")
-	fmt.Println()
 	for k := 0; k < banyakMahasiswa; k++ {
 		fmt.Printf("Nama	 : %s\nNo.Induk : %s\nNilai	 : %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
 		fmt.Println("========================================")
@@ -53,7 +52,6 @@ func NilaiDescending(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banya
 	}
 
 	fmt.Println("========================================")
-	fmt.Println()
 	for k := 0; k < banyakMahasiswa; k++ {
 		fmt.Printf("Nama	 : %s\nNo.Induk : %s\nNilai	 : %0.2f\n", arr[k].NamaMahasiswa, arr[k].NomorInduk, arr2[k].NilaiTes)
 		fmt.Println("========================================")
@@ -128,7 +126,7 @@ func SortingLulus(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMaha
 	fmt.Println("========================================")
 	for k := 0; k < banyakMahasiswa; k++ {
 		if arr3[k].Konfirmasi == true {
-			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+			fmt.Printf("Nama	 : %s\nNo.Induk : %s\nStatus	 : Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
 			fmt.Println("========================================")
 		}
 	}
@@ -138,7 +136,7 @@ func SortingDitolak(arr struct_tubes.TabArr, arr3 struct_tubes.TabKonf, banyakMa
 	fmt.Println("========================================")
 	for k := 0; k < banyakMahasiswa; k++ {
 		if arr3[k].Konfirmasi == false {
-			fmt.Printf("Nama	: %s\nNo.Induk: %s\nStatus	: Tidak Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
+			fmt.Printf("Nama	 : %s\nNo.Induk : %s\nStatus	 : Tidak Lulus\n", arr[k].NamaMahasiswa, arr[k].NomorInduk)
 			fmt.Println("========================================")
 		}
 	}
@@ -168,7 +166,7 @@ func SortingUmur(arr struct_tubes.TabArr, banyakMahasiswa int) {
 		fmt.Println("========================================")
 		for i := 0; i < banyakMahasiswa; i++ {
 			if arr[i].UmurMahasiswa == umur {
-				fmt.Printf("Nama	: %s\nNo.Induk: %s\numur	: %d\n", arr[i].NamaMahasiswa, arr[i].NomorInduk, arr[i].UmurMahasiswa)
+				fmt.Printf("Nama	 : %s\nNo.Induk : %s\numur	 : %d\n", arr[i].NamaMahasiswa, arr[i].NomorInduk, arr[i].UmurMahasiswa)
 				fmt.Println("========================================")
 			}
 		}

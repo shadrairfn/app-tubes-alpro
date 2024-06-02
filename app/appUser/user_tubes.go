@@ -10,22 +10,22 @@ func IsInput(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakMahasis
 	/* input Nama, NIK, Tanggal lahir, Umur, Asal kota, Alamat dari Mahasiswa yang didaftarkan */
 	var ProgramStud int
 	i := *banyakMahasiswa
-	fmt.Printf("Nama			     : ")
+	fmt.Printf("Nama			      : ")
 	fmt.Scan(&arr[i].NamaMahasiswa)
 
-	fmt.Printf("Nomor Induk Kependudukan     : ")
+	fmt.Printf("Nomor Induk Kependudukan      : ")
 	fmt.Scan(&arr[i].NomorInduk)
 
-	fmt.Printf("Tanggal Lahir (Ex : 8 9 2004): ")
+	fmt.Printf("Tanggal Lahir (Ex : 8 9 2004) : ")
 	fmt.Scan(&arr[i].TanggalLahir, &arr[i].BulanLahir, &arr[i].TahunLahir)
 
-	fmt.Print("Umur			     : ")
+	fmt.Print("Umur			      : ")
 	fmt.Scan(&arr[i].UmurMahasiswa)
 
-	fmt.Printf("Asal Kota 		     : ")
+	fmt.Printf("Asal Kota 		      : ")
 	fmt.Scan(&arr[i].KotaTinggal)
 
-	fmt.Printf("Alamat Rumah		     : ")
+	fmt.Printf("Alamat Rumah		      : ")
 	fmt.Scan(&arr[i].NamaJalan)
 
 	fmt.Println()
