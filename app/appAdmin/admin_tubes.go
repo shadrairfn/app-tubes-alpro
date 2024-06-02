@@ -77,7 +77,7 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 
 	fmt.Print("Menu: (tambah / edit / hapus): ")
 	fmt.Scan(&menuEdit)
-
+	fmt.Println()
 	switch menuEdit {
 	case "tambah":
 		i := *banyakMahasiswa
@@ -128,7 +128,6 @@ func EditMahasiswa(arr *struct_tubes.TabArr, arr2 *struct_tubes.TabArr2, banyakM
 		fmt.Println()
 		fmt.Print("Status Kelulusan (Ya/Tidak): ")
 		fmt.Scan(&kelulusan)
-		fmt.Println()
 		if kelulusan == "Ya" {
 			arr3[i].Konfirmasi = true
 		} else {
