@@ -2,7 +2,9 @@ package admin_tubes
 
 import (
 	"fmt"
+
 	menu_tubes "github.com/shadrairfn/app-tubes-alpro/app/appMenu"
+	sorting_tubes "github.com/shadrairfn/app-tubes-alpro/app/appSorting"
 	struct_tubes "github.com/shadrairfn/app-tubes-alpro/app/appStruct"
 )
 
@@ -24,30 +26,12 @@ func CekPendaftar(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMaha
 		fmt.Println()
 	}
 	menu_tubes.MenuSortingAdmin()
-	var j int
-	var temp float64
-	var temp1, temp2 string
 	fmt.Print("Pilih Menu: ")
 	fmt.Scan(&sorting)
 	fmt.Println()
 	switch sorting {
 	case 1:	
-		for pass := 1; pass < banyakMahasiswa; pass++ {
-			temp := arr2[pass].NilaiTes
-			temp1 := arr[pass].NamaMahasiswa
-			temp2 := arr[pass].NomorInduk
-			
-			j := pass - 1
-			for j >= 0 && arr2[j].NilaiTes > temp {
-				arr2[j+1].NilaiTes = arr2[j].NilaiTes
-				arr[j+1].NamaMahasiswa = arr[j].NamaMahasiswa
-				arr[j+1].NomorInduk = arr[j].NomorInduk
-				j--
-			}
-			arr2[j+1].NilaiTes = temp
-			arr[j+1].NamaMahasiswa = temp1
-			arr[j+1].NomorInduk = temp2
-		}			
+		sorting_tubes.NilaiAscending(&arr, &arr2, banyakMahasiswa)
 		
 		fmt.Println("==========================")
 		for k := 0; k < banyakMahasiswa; k++ {
@@ -57,21 +41,7 @@ func CekPendaftar(arr struct_tubes.TabArr, arr2 struct_tubes.TabArr2, banyakMaha
 		fmt.Println("==========================")
 
 	case 2:
-		for pass := 0; pass < banyakMahasiswa; pass++ {
-			j = pass
-			temp = arr2[j+1].NilaiTes
-			temp1 = arr[j+1].NamaMahasiswa
-			temp2 = arr[j+1].NomorInduk
-			for j >= 0 && temp > arr2[j].NilaiTes {
-				arr[j+1] = arr[j]
-				arr[j+1] = arr[j]
-				arr2[j+1] = arr2[j]
-				j -= 1
-			}
-			arr2[j+1].NilaiTes = temp
-			arr[j+1].NamaMahasiswa = temp1
-			arr[j+1].NomorInduk = temp2
-		}
+		sorting_tubes.NilaiDescending(&arr, &arr2, banyakMahasiswa)
 
 		fmt.Println("==========================")
 		for k := 0; k < banyakMahasiswa; k++ {
